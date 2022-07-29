@@ -33,7 +33,7 @@ class ParallelModel(KM.Model):
         gpu_count: Number of GPUs. Must be > 1
         """
         
-        #super().__init__()
+        super(ParallelModel, self).__init__()
         self.inner_model = keras_model
         self.gpu_count = gpu_count
         merged_outputs = self.make_parallel()
