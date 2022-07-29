@@ -38,7 +38,7 @@ class ParallelModel(KM.Model):
         self.gpu_count = gpu_count
         merged_outputs = self.make_parallel()
         super(ParallelModel, self).__init__(inputs=self.inner_model.inputs,
-                                            #outputs=merged_outputs)
+                                            outputs=merged_outputs)
 
     def __getattribute__(self, attrname):
         """Redirect loading and saving methods to the inner model. That's where
